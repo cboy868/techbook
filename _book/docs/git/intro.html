@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>工具系列 · GitBook</title>
+        <title>Git常用命令 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="server-install.html" />
     
-    <link rel="prev" href="../designPatterns/strategy.html" />
+    
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -235,16 +237,177 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="dev.html">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="dev.html">
+                <a href="./">
             
                     
-                    工具系列
+                    git
             
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Git常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="server-install.html">
+            
+                <a href="server-install.html">
+            
+                    
+                    git服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="auto-deploy.html">
+            
+                <a href="auto-deploy.html">
+            
+                    
+                    git自动部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="gogs.html">
+            
+                <a href="gogs.html">
+            
+                    
+                    搭建gogs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../laravel/">
+            
+                <a href="../laravel/">
+            
+                    
+                    laravel
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../laravel/db.html">
+            
+                <a href="../laravel/db.html">
+            
+                    
+                    跨库事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../other/zhiyan.html">
+            
+                <a href="../other/zhiyan.html">
+            
+                    
+                    逻辑直言命题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../other/macU.html">
+            
+                <a href="../other/macU.html">
+            
+                    
+                    mac读写U盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../other/mirrors.html">
+            
+                <a href="../other/mirrors.html">
+            
+                    
+                    各种镜象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../other/homebrew.html">
+            
+                <a href="../other/homebrew.html">
+            
+                    
+                    安装Homebrew
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -278,7 +441,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >工具系列</a>
+        <a href="../.." >Git常用命令</a>
     </h1>
 </div>
 
@@ -293,9 +456,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5F00;&#x53D1;&#x5DE5;&#x5177;">&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h1>
-<p><a href="https://typora.io/" target="_blank">md&#x6587;&#x6863;&#x7F16;&#x5199;&#x5DE5;&#x5177; typora</a></p>
-
+                                <h1 id="git&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x793A;&#x4F8B;">Git&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h1>
+<h4 id="&#x521D;&#x59CB;&#x5316;">&#x521D;&#x59CB;&#x5316;</h4>
+<pre><code>touch README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/cboy868/test.git
+git push -u origin master
+</code></pre><h4 id="&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h4>
+<pre><code>git remote add origin https://github.com/cboy868/test.git
+git push -u origin master
+</code></pre><h4 id="&#x5F3A;&#x5236;&#x4E0B;&#x62C9;&#xFF0C;&#x4F1A;&#x8986;&#x76D6;&#x672A;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#xFF0C;&#x6CE8;&#x610F;&#x5B89;&#x5168;">&#x5F3A;&#x5236;&#x4E0B;&#x62C9;&#xFF0C;&#x4F1A;&#x8986;&#x76D6;&#x672A;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#xFF0C;&#x6CE8;&#x610F;&#x5B89;&#x5168;</h4>
+<pre><code>git fetch --all 
+git reset --hard origin/master
+git pull
+</code></pre>
                                 
                                 </section>
                             
@@ -322,10 +498,14 @@
 
             
                 
-                <a href="../designPatterns/strategy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 策略模式">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: git">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="server-install.html" class="navigation navigation-next " aria-label="Next page: git服务器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -334,7 +514,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"工具系列","level":"1.5","depth":1,"previous":{"title":"策略模式","level":"1.4.1","depth":2,"path":"docs/designPatterns/strategy.md","ref":"docs/designPatterns/strategy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/tools/dev.md","mtime":"2020-03-20T04:09:30.785Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-20T17:24:40.517Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git常用命令","level":"1.5.1","depth":2,"next":{"title":"git服务器","level":"1.5.2","depth":2,"path":"docs/git/server-install.md","ref":"docs/git/server-install.md","articles":[]},"previous":{"title":"git","level":"1.5","depth":1,"path":"docs/git/README.md","ref":"docs/git/README.md","articles":[{"title":"Git常用命令","level":"1.5.1","depth":2,"path":"docs/git/intro.md","ref":"docs/git/intro.md","articles":[]},{"title":"git服务器","level":"1.5.2","depth":2,"path":"docs/git/server-install.md","ref":"docs/git/server-install.md","articles":[]},{"title":"git自动部署","level":"1.5.3","depth":2,"path":"docs/git/auto-deploy.md","ref":"docs/git/auto-deploy.md","articles":[]},{"title":"搭建gogs","level":"1.5.4","depth":2,"path":"docs/git/gogs.md","ref":"docs/git/gogs.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/git/intro.md","mtime":"2020-03-28T13:40:14.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-28T14:42:00.040Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
