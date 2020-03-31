@@ -13,24 +13,32 @@
 var partner_key = pm.variables.get("partner_key");
 
 console.log(partner_key)
-var fdata = pm.request.body.formdata.members
+var fdata = pm.request.body.formdata
+var rawData = pm.request.body.raw
 
-var params = {}
-for (let i in fdata) {
-    if (fdata[i]["key"] != "xdSign") {
-        params[fdata[i]["key"]] = fdata[i]["value"]
+if (pm.request.body.raw !== undefined) {
+    signData = eval("(" + pm.request.body.raw+ ")")
+} else if(pm.request.body.formdata !== undefined) {
+    var fdata = pm.request.body.formdata.members
+    var params = {}
+    for (let i in fdata) {
+        if (fdata[i]["key"] != "xdSign") {
+            params[fdata[i]["key"]] = fdata[i]["value"]
+        }
     }
+    var signData = {}
+    Object.keys(params).sort().map(key => {
+      signData[key]=params[key]
+    })
 }
-
-var signData = {}
-Object.keys(params).sort().map(key => {
-  signData[key]=params[key]
-})
+console.log(signData)
 
 var signStr = Object.keys(signData).map(function (key) {
     return "".concat(encodeURIComponent(key), "=").concat(encodeURIComponent(signData[key]));
 }).join('&');
 
+console.log("11111111")
+console.log(signStr + "&partner_key="+partner_key)
 
 if (signStr) {
     sign = CryptoJS.MD5(signStr + "&partner_key="+partner_key).toString()
@@ -38,6 +46,11 @@ if (signStr) {
     sign = CryptoJS.MD5("partner_key="+partner_key).toString()
 }
 
+
 pm.environment.set("sign", sign)
+
+
+
+
 
 ```
