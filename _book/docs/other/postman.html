@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>各种镜象配置 · GitBook</title>
+        <title>postman · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="homebrew.html" />
     
-    
-    <link rel="prev" href="macU.html" />
+    <link rel="prev" href="homebrew.html" />
     
 
     </head>
@@ -380,7 +378,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.3" data-path="mirrors.html">
+        <li class="chapter " data-level="1.7.3" data-path="mirrors.html">
             
                 <a href="mirrors.html">
             
@@ -406,7 +404,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.5" data-path="postman.html">
+        <li class="chapter active" data-level="1.7.5" data-path="postman.html">
             
                 <a href="postman.html">
             
@@ -454,7 +452,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >各种镜象配置</a>
+        <a href="../.." >postman</a>
     </h1>
 </div>
 
@@ -469,16 +467,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5404;&#x79CD;&#x955C;&#x8C61;&#x8BBE;&#x7F6E;">&#x5404;&#x79CD;&#x955C;&#x8C61;&#x8BBE;&#x7F6E;</h1>
-<h3 id="npm&#x955C;&#x8C61;&#x6539;&#x4E3A;&#x6DD8;&#x5B9D;&#x7684;">npm&#x955C;&#x8C61;&#x6539;&#x4E3A;&#x6DD8;&#x5B9D;&#x7684;</h3>
-<pre><code>npm config set registry https://registry.npm.taobao.org
-npm install
-</code></pre><p>&#x6216;&#x8005;</p>
-<pre><code>npm install --registry=https://registry.npm.taobao.org
-</code></pre><h3 id="php-composer&#x6539;&#x4E3A;&#x963F;&#x91CC;&#x4E91;&#x7684;">php composer&#x6539;&#x4E3A;&#x963F;&#x91CC;&#x4E91;&#x7684;</h3>
-<p><a href="https://developer.aliyun.com/composer" target="_blank">&#x4ECB;&#x7ECD;&#x5730;&#x5740;</a></p>
-<h3 id="docker-&#x955C;&#x50CF;-&#x963F;&#x91CC;&#x4E91;">docker &#x955C;&#x50CF; &#x963F;&#x91CC;&#x4E91;</h3>
-<p><a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank">&#x5730;&#x5740;</a> &#x9700;&#x8981;&#x767B;&#x5F55;</p>
+                                <h1 id="postman&#x4F7F;&#x7528;&#x6280;&#x5DE7;">PostMan&#x4F7F;&#x7528;&#x6280;&#x5DE7;</h1>
+<h2 id="&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p>&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;&#x8BF7;&#x6C42;&#x7684;URL&#xFF0C;&#x5E76;&#x5BF9;&#x5E94;&#x597D;&#x73AF;&#x5883;&#xFF0C;&#x4E4B;&#x540E;&#x8BF7;&#x6C42;&#x67D0;&#x4E2A;&#x73AF;&#x5883;&#x65F6;&#xFF0C;&#x53EA;&#x8981;&#x5207;&#x6362;&#x4E00;&#x4E0B;&#x73AF;&#x5883;&#x5C31;OK&#x4E86;</p>
+<h2 id="&#x4F7F;&#x7528;pre-request-script">&#x4F7F;&#x7528;Pre-request Script</h2>
+<p>&#x4F5C;&#x7528;&#x662F;&#xFF0C;postman&#x5728;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x53EF;&#x6267;&#x884C;&#x6B64;&#x5904;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x53EF;&#x7528;&#x6765;&#x4E2A;&#x6DFB;&#x52A0;&#x53C2;&#x6570;&#x7B49;<br>&#x5B9E;&#x4F8B;:&#x7B7E;&#x540D;&#x8BF7;&#x6C42;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> partner_key = pm.variables.get(<span class="hljs-string">&quot;partner_key&quot;</span>);
+
+<span class="hljs-built_in">console</span>.log(partner_key)
+<span class="hljs-keyword">var</span> fdata = pm.request.body.formdata.members
+
+<span class="hljs-keyword">var</span> params = {}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">in</span> fdata) {
+    <span class="hljs-keyword">if</span> (fdata[i][<span class="hljs-string">&quot;key&quot;</span>] != <span class="hljs-string">&quot;xdSign&quot;</span>) {
+        params[fdata[i][<span class="hljs-string">&quot;key&quot;</span>]] = fdata[i][<span class="hljs-string">&quot;value&quot;</span>]
+    }
+}
+
+<span class="hljs-keyword">var</span> signData = {}
+<span class="hljs-built_in">Object</span>.keys(params).sort().map(key =&gt; {
+  signData[key]=params[key]
+})
+<span class="hljs-built_in">console</span>.log(signData)
+
+<span class="hljs-keyword">var</span> signStr = <span class="hljs-built_in">Object</span>.keys(signData).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>.concat(<span class="hljs-built_in">encodeURIComponent</span>(key), <span class="hljs-string">&quot;=&quot;</span>).concat(<span class="hljs-built_in">encodeURIComponent</span>(signData[key]));
+}).join(<span class="hljs-string">&apos;&amp;&apos;</span>);
+
+sign = CryptoJS.MD5(signStr + <span class="hljs-string">&quot;&amp;partner_key=&quot;</span>+partner_key).toString()
+
+pm.environment.set(<span class="hljs-string">&quot;sign&quot;</span>, sign)
+</code></pre>
 
                                 
                                 </section>
@@ -506,14 +525,10 @@ npm install
 
             
                 
-                <a href="macU.html" class="navigation navigation-prev " aria-label="Previous page: mac读写U盘">
+                <a href="homebrew.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 安装Homebrew">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="homebrew.html" class="navigation navigation-next " aria-label="Next page: 安装Homebrew">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -522,7 +537,7 @@ npm install
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"各种镜象配置","level":"1.7.3","depth":2,"next":{"title":"安装Homebrew","level":"1.7.4","depth":2,"path":"docs/other/homebrew.md","ref":"docs/other/homebrew.md","articles":[]},"previous":{"title":"mac读写U盘","level":"1.7.2","depth":2,"path":"docs/other/macU.md","ref":"docs/other/macU.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/other/mirrors.md","mtime":"2020-03-28T14:47:36.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T10:01:42.102Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"postman","level":"1.7.5","depth":2,"previous":{"title":"安装Homebrew","level":"1.7.4","depth":2,"path":"docs/other/homebrew.md","ref":"docs/other/homebrew.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/other/postman.md","mtime":"2020-03-30T10:00:23.559Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T10:01:42.102Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -21,3 +21,4 @@
     * [mac读写U盘](docs/other/macU.md)
     * [各种镜象配置](docs/other/mirrors.md)
     * [安装Homebrew](docs/other/homebrew.md)
+    * [postman](docs/other/postman.md)
