@@ -9,17 +9,9 @@
                 "-highlight",
                 "theme-comscore",
                 "search-plus",
-                "editlink",
                 "splitter",
                 "mindmap",
                 "plantuml-svg2"],
-    "pluginsConfig": {
-        "editlink": {
-            "base": "https://git-dp.nqyong.com/Zuji/Documents/src/master/",
-            "label": "编辑本页",
-            "multilingual": false
-        }
-    },
     "styles": {
         "website":"styles/website.css"
     },
