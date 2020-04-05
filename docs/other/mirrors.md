@@ -15,3 +15,9 @@ npm install --registry=https://registry.npm.taobao.org
 
 ### docker 镜像 阿里云
 [地址](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors) 需要登录
+
+### go 镜象 阿里云
+https://developer.aliyun.com/mirror/goproxy 
+
+### go 中国
+https://goproxy.cn/

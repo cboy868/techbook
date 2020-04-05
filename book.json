@@ -1,0 +1,39 @@
+{
+    "title": "租机文档",
+    "description": "租机文档库",
+    "language": "zh-hans",
+    "author":"租机项目组",
+    "plugins": ["-lunr",
+                "-search",
+                "prism",
+                "-highlight",
+                "theme-comscore",
+                "search-plus",
+                "editlink",
+                "splitter",
+                "mindmap",
+                "plantuml-svg2"],
+    "pluginsConfig": {
+        "editlink": {
+            "base": "https://git-dp.nqyong.com/Zuji/Documents/src/master/",
+            "label": "编辑本页",
+            "multilingual": false
+        }
+    },
+    "styles": {
+        "website":"styles/website.css"
+    },
+    "structure":{
+        "readme":"Readme.md",
+        "summary":"Readme.md"
+    },
+    "links": {
+        "sharing": {
+            "google": null,
+            "facebook": null,
+            "twitter": null,
+            "weibo": null,
+            "all": null
+        }
+    }
+}
