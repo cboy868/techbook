@@ -11,6 +11,7 @@
                 "search-plus",
                 "splitter",
                 "mindmap",
+                "mermaid-gb3",
                 "plantuml-svg2"],
     "styles": {
         "website":"styles/website.css"
