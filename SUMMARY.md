@@ -3,6 +3,7 @@
 * [常用知识点](parts/README.md)
     * [Redis锁](parts/redisLock.md)
     * [Markdown语法绘图](parts/markdown.md)
+    * [mongoDB](parts/mongo.md)
 * [Nginx](docs/nginx/README.md)
     * [反向代理](docs/nginx/proxy.md)
     * [对称加密与非对称加密](docs/nginx/encryption.md)
