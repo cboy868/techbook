@@ -1,8 +1,8 @@
 {
-    "title": "租机文档",
-    "description": "租机文档库",
+    "title": "知识管理",
+    "description": "文档库",
     "language": "zh-hans",
-    "author":"租机项目组",
+    "author":"Wansq",
     "plugins": ["-lunr",
                 "-search",
                 "prism",
