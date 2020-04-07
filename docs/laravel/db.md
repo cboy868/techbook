@@ -34,24 +34,30 @@ try {
 ## 软删除
 
 ```
- //软删除使用方法
- use SoftDeletes();
- 
- $model = TestSoftDeleteModel::find(1);
- 
- // 1、软删除 
- $model->delete();
- 
- // 2、恢复数据
- $model->restore()
- 
- // 3、强制删除，删除后，数据无法恢复
- $model->forceDelete();
- 
- // 4、查找显示包括软删除之内的所有数据
- TestSoftDeleteModel::where('id', '<', 10)->withTrashed()->all();
- 
- // 5、只显示所有删除数据
- TestSoftDeleteModel::where('id', '<', 10)->onlyTrashed()->get();
+//软删除使用方法
+use SoftDeletes();
+
+$model = TestSoftDeleteModel::find(1);
+
+// 1、软删除 
+$model->delete();
+
+// 2、恢复数据
+$model->restore()
+
+// 3、强制删除，删除后，数据无法恢复
+$model->forceDelete();
+
+// 4、查找显示包括软删除之内的所有数据
+TestSoftDeleteModel::where('id', '<', 10)->withTrashed()->all();
+
+// 5、只显示所有删除数据
+TestSoftDeleteModel::where('id', '<', 10)->onlyTrashed()->get();
+
+// 6、数据被软删除后关联的数据还想关联到该数据，需要在belongsTo后面加withTrashed
+public function user()
+{
+    return $this->belongsTo(Administrator::class)->withTrashed();
+}
 
 ```
