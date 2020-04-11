@@ -24,3 +24,4 @@
   * [各种镜象配置](docs/other/mirrors.md)
   * [安装Homebrew](docs/other/homebrew.md)
   * [postman](docs/other/postman.md)
+  * [性能测试](docs/other/ab.md)
