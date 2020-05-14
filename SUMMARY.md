@@ -18,6 +18,7 @@
   * [搭建gogs](docs/git/gogs.md)
 * [laravel](docs/laravel/README.md)
   * [跨库事务](docs/laravel/db.md)
+  * [websocket基本使用](docs/laravel/websocket.md)
 * [其它](docs/other/README.md)
   * [逻辑直言命题](docs/other/zhiyan.md)
   * [mac读写U盘](docs/other/macU.md)
