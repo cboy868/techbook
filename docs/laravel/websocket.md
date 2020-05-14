@@ -19,6 +19,12 @@ laravel-echo-server init
 ```
 laravel-echo-server start
 ```
+
+4. 生成key
+```
+ laravel-echo-server client:add
+```
+
 docker方式
 文件依赖dnmp[地址](https://github.com/cboy868/dnmp)
 1. docker-compose.yml中添加echo代码，需要redis服务 
@@ -38,14 +44,17 @@ services:
         - "6001:6001"
 ```
 
-2. 执行命令启动docker
+2. 生成key
+```
+ laravel-echo-server client:add
+```
+
+3. 执行命令启动docker
 ```docker
 docker-compose up -d
 ```
 
 检测环境是否ok,访问http://your_host_address:6001/socket.io/socket.io.js,打印出正常的js代码ok  
-
-
 
 ## 二、laravel后台
 1. 定义trait
