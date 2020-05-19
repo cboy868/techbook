@@ -113,6 +113,7 @@ Route::prefix('crm')->group(function () {
 1. bootstrap.js部分查看上一篇文章
 
 2. admin.crm.socket页面代码
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
