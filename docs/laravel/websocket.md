@@ -57,9 +57,9 @@ docker-compose up -d
 检测环境是否ok,访问http://your_host_address:6001/socket.io/socket.io.js,打印出正常的js代码ok  
 
 ## 二、laravel后台
+
 1. 定义trait
 ```php
-<?php
 
 namespace App\HelpTrait;
 
@@ -70,7 +70,7 @@ trait BroadcastHttpPush
     public function push($data)
     {
         //docker
-        // $baseUrl = 'echo:6001/;//docker
+        // $baseUrl = 'http://echo:6001/';//docker
         //普通服务
         $baseUrl = 'http://localhost:6001/';//url
         $appId = '6fa6403e606637ce';//appId
@@ -91,7 +91,6 @@ trait BroadcastHttpPush
 
 2. 在控制器中使用
 ```php
-<?php
 namespace App\Controllers;
 
 use App\HelpTrait\BroadcastHttpPush;
@@ -129,8 +128,9 @@ Route::get('/test/testecho', "TestSocketController@front")->name('test.websocket
 
 
 ## 三、laravel前端
-1. resources/js/bootstrap.js中添加代码
-```js
+1. resources/js/bootstrap.js中添加代码  
+
+```javascript
 import Echo from 'laravel-echo';
 
 window.Echo = new Echo({
