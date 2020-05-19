@@ -159,7 +159,7 @@ npm run dev
 
 <head>
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo csrf_token()?>">
     <script src="http://127.0.0.1:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
 </head>
