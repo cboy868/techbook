@@ -5,6 +5,7 @@
 ## 二、laravel后台
 
 1. 配置
+
 ```
 #1 config/app.php 中取消注释
 App\Providers\BroadcastServiceProvider::class,
@@ -98,6 +99,7 @@ class SocketController extends CrmController
 ```
 
 3. routers
+
 ```php 
 use Illuminate\Support\Facades\Route;
 

@@ -99,6 +99,7 @@ class SocketController extends CrmController
 ```
 
 3. routes/channel中加入以下
+
 ```php 
 Broadcast::channel('orderUpdate', function ($user) {
     return true;
@@ -106,6 +107,7 @@ Broadcast::channel('orderUpdate', function ($user) {
 ```
 
 4. 注意，auth("api")使用的是jwt,config/auth.php中对应配置改为如下，其它有关jwt内容参考jwt
+
 ```php
 'guards' => [
     'api' => [
@@ -232,25 +234,32 @@ function getHeaders(){
 ```
 
 ## 四、测试
-1.启动队列
+
+1. 启动队列
+
 ```
 php artisan queue:listen --tries=1
 ```
-2.功能测试
+
+2. 功能测试
+
 ```
 进入crm/socket页面，点各消息按扭，查看消息框内的内容变化，有变化则表示成功
 ```
 
 
 ## 五、注意
+
 1. 如果总提示csrf_token验证不通过，可暂时关闭中间件中的验证，App\Http\Middleware\VerifyCsrfToken.php中添加如下代码
+
 ```php
 protected $except = [
     "broadcasting/auth"
 ];
 ```
 
-2.laravel-echo-server 的devMode改为true，否则没有log不容易调试
+2. laravel-echo-server 的devMode改为true，否则没有log不容易调试
+
 ```js
 "devMode": true,
 ```

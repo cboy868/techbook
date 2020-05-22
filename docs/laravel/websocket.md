@@ -4,6 +4,7 @@
 代码地址: [laravel-echo-server](https://github.com/tlaverdure/laravel-echo-server)
 
 服务器安装  
+_____
 
 1. 普通安装
 ```node
@@ -26,8 +27,10 @@ laravel-echo-server start
 ```
 
 docker方式
+_____
 文件依赖dnmp[地址](https://github.com/cboy868/dnmp)
 1. docker-compose.yml中添加echo代码，需要redis服务 
+
 ```docker-compose
 version: "3"
 services:
@@ -59,8 +62,8 @@ docker-compose up -d
 ## 二、laravel后台
 
 1. 定义trait
-```php
 
+```php
 namespace App\HelpTrait;
 
 use GuzzleHttp\Client;
@@ -90,6 +93,7 @@ trait BroadcastHttpPush
 ```
 
 2. 在控制器中使用
+
 ```php
 namespace App\Controllers;
 
@@ -121,6 +125,7 @@ class TestSocketController
 ```
 
 3. web.php 加入 routers
+
 ```php
 Route::get('/test', "TestSocketController@index")->name('test.websocket');
 Route::get('/test/testecho', "TestSocketController@front")->name('test.websocket.echo');
@@ -128,6 +133,7 @@ Route::get('/test/testecho', "TestSocketController@front")->name('test.websocket
 
 
 ## 三、laravel前端
+
 1. resources/js/bootstrap.js中添加代码  
 
 ```javascript
@@ -148,11 +154,13 @@ window.Echo = new Echo({
 ```
 
 2. 项目目录中编译js
+
 ```
 npm run dev
 ```
 
 3. blade模板中使用,编辑resources/views/test/front.blade.php模板代码
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -178,6 +186,7 @@ npm run dev
 ```
 
 ## 四、测试
+
 1. 打开页面1 http://your-domain-name:port/test/testecho
 2. 发送消息 http://your-domain-name:port/test
 3. 查看页面1控制台是否有消息打印
