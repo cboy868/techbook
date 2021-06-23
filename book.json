@@ -12,6 +12,7 @@
                 "splitter",
                 "mindmap",
                 "mermaid-gb3",
+                "simple-mind-map",
                 "plantuml-svg2"],
     "styles": {
         "website":"styles/website.css"
